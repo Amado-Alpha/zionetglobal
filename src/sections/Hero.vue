@@ -38,9 +38,9 @@ import { ref, onMounted, onUnmounted } from 'vue';
 
 // Recommended image size (1200x600)
 const slides = [
-    { image: about, alt: 'Slide 1', title: 'Slide Title 1', description: 'Slide Description 1' },
+    { image: about, alt: 'Slide 1', title: 'Dedicated to serve you', description: 'Let us have your business infrastructure connected like never before!' },
     { image: 'https://easywebdigital.com/sites/default/files/news/intelligent-wireless-2-large.jpg', alt: 'Slide 2', title: 'Microwave link installation', description: 'We install both single purpose and hybrid wireless links at an affordable price to enhance your business productivity' },
-    { image: 'https://tricon-services.com/sites/default/files/Point-to-Point-Links-Pic.jpg', alt: 'Slide 3', title: 'Slide Title 3', description: 'Slide Description 3' },
+    { image: 'https://tricon-services.com/sites/default/files/Point-to-Point-Links-Pic.jpg', alt: 'Slide 3', title: 'Reliable services', description: 'Continous support for our clients, we are just one call away.' },
 ];
 
 const currentSlide = ref(0);
