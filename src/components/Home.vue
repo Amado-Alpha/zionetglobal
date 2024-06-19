@@ -1,21 +1,26 @@
 <template>
-    <section class="max-container">
-      <Hero />
-    </section>
-    <section class="padding">
-      <Services />
-    </section>
-    <section class="padding-x sm:py-32 py-16 w-full">
-      <Subscribe />
-    </section>
+  <section class="max-container">
+    <Hero />
+  </section>
+  <section class="">
+    <Services />
+  </section>
+  <section>
+    <TeamMembers />
+  </section>
+  <section>
+    <PaymentDetails />
+  </section>
+  <section>
+    <WhatsAppIcon />
+  </section>
 </template>
 
 
 <script setup>
-
 import Hero from '../sections/Hero.vue';
 import Services from '../sections/Services.vue';
-import Subscribe from '../sections/Subscribe.vue';
-
-
+import PaymentDetails from '../sections/PaymentDetails.vue';
+import TeamMembers from '../sections/TeamMembers.vue';
+import WhatsAppIcon from './WhatsAppIcon.vue';
 </script>

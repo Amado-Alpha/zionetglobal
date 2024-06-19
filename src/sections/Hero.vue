@@ -1,147 +1,111 @@
 <template>
-   <section
-        id="home"
-        class="justify-center"
-    >
-        <div id="carousel-example" class="relative">
-            <!-- Carousel wrapper -->
-            <div class="relative w-full overflow-hidden h-56 rounded-lg sm:h-64 xl:h-90 2xl:h-96 
-                mt-0  md:mt-20 lg:mt-20 xl:mt-20 md:py-52 lg:py-60 sm:py-52 es:py-28 xl:pt-50 
-                ">
-                <div v-for="(item, index) in carouselItems" :key="index" :id="'carousel-item-' + (index + 1)" class="hidden duration-700 ease-in-out">
-                    <span v-if="index === 0" class="absolute text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-                    <img :src="item.src" class="absolute block xl:object-fill xl:h-full w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..."> 
+    <section id="home" class="">
+        <div class="carousel-container relative w-full overflow-hidden">
+            <div class="carousel-inner flex transition-transform duration-500 ease-in-out"
+                :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
+                <div v-for="(slide, index) in slides" :key="index" class="carousel-item flex-shrink-0 w-full relative">
+                    <img :src="slide.image" :alt="slide.alt" class="w-full h-[600px] object-cover">
+                    <div class="gradient-overlay absolute inset-0"></div>
+                    <div
+                        class="carousel-caption absolute bottom-8 left-8 bg-black bg-opacity-50 text-white p-4 rounded-lg">
+                        <h2 class="text-2xl font-semibold">{{ slide.title }}</h2>
+                        <p class="mt-2">{{ slide.description }}</p>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Slider indicators -->
-            <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2 es:bottom-2 es:left-1/2">
-                <button id="carousel-indicator-1" type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"></button>
-                <button id="carousel-indicator-2" type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"></button>
-                <button id="carousel-indicator-3" type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"></button>
-                <button id="carousel-indicator-4" type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"></button>
+            <button @click="prevSlide"
+                class="carousel-prev absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full focus:outline-none">
+                &#10094;
+            </button>
+            <button @click="nextSlide"
+                class="carousel-next absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full focus:outline-none">
+                &#10095;
+            </button>
+            <div class="carousel-indicators absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                <span v-for="(slide, index) in slides" :key="index" @click="gotoSlide(index)"
+                    :class="{ 'bg-white': currentSlide === index, 'bg-gray-400': currentSlide !== index }"
+                    class="block w-3 h-3 rounded-full cursor-pointer"></span>
             </div>
-            
-            <!-- Slider controls -->
-            <button id="data-carousel-prev" type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
-                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-12 sm:h-12 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                    <span class="hidden">Previous</span>
-                </span>
-            </button>
-            <button id="data-carousel-next" type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none">
-                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-12 sm:h-12 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    <span class="hidden">Next</span>
-                </span>
-            </button>
         </div>
-    
     </section>
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
-import { Carousel } from 'flowbite';
 import { banner } from "../assets/images";
+import { about } from "../assets/images";
+
+import { ref, onMounted, onUnmounted } from 'vue';
+
+// Recommended image size (1200x600)
+const slides = [
+    { image: about, alt: 'Slide 1', title: 'Slide Title 1', description: 'Slide Description 1' },
+    { image: 'https://easywebdigital.com/sites/default/files/news/intelligent-wireless-2-large.jpg', alt: 'Slide 2', title: 'Microwave link installation', description: 'We install both single purpose and hybrid wireless links at an affordable price to enhance your business productivity' },
+    { image: 'https://tricon-services.com/sites/default/files/Point-to-Point-Links-Pic.jpg', alt: 'Slide 3', title: 'Slide Title 3', description: 'Slide Description 3' },
+];
+
+const currentSlide = ref(0);
+const totalSlides = slides.length;
+let slideInterval;
 
 
-const carouselData = () => {
-    const carouselItems = ref([
-      { src: banner },
-      { src: banner },
-      { src: banner },
-      { src: banner },
-    ]);
+function nextSlide() {
+    currentSlide.value = (currentSlide.value + 1) % totalSlides;
+}
 
-    return {
-        carouselItems 
-    };
-};
+function prevSlide() {
+    currentSlide.value = (currentSlide.value - 1 + totalSlides) % totalSlides;
+}
 
-const { carouselItems } = carouselData();
+function gotoSlide(index) {
+    currentSlide.value = index;
+}
 
 onMounted(() => {
-    const carouselElement = document.getElementById('carousel-example');
+    slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+});
 
-    const items = [
-        {
-            position: 0,
-            el: document.getElementById('carousel-item-1')
-        },
-        {
-            position: 1,
-            el: document.getElementById('carousel-item-2')
-        },
-        {
-            position: 2,
-            el: document.getElementById('carousel-item-3')
-        },
-        {
-            position: 3,
-            el: document.getElementById('carousel-item-4')
-        },
-    ];
+onUnmounted(() => {
+    clearInterval(slideInterval);
+});
 
-    const options = {
-        defaultPosition: 1,
-        interval: 7000,
-        
-        indicators: {
-            activeClasses: 'bg-white dark:bg-gray-800',
-            inactiveClasses: 'bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800',
-            
-            items: [
-                {
-                    position: 0,
-                    el: document.getElementById('carousel-indicator-1')
-                },
-                {
-                    position: 1,
-                    el: document.getElementById('carousel-indicator-2')
-                },
-                {
-                    position: 2,
-                    el: document.getElementById('carousel-indicator-3')
-                },
-                {
-                    position: 3,
-                    el: document.getElementById('carousel-indicator-4')
-                },
-            ]
-        },
-        
-        // callback functions
-        onNext: () => {
-            // console.log('next slider item is shown');
-        },
-        onPrev: ( ) => {
-            // console.log('previous slider item is shown');
-        },
-        onChange: ( ) => {
-            // console.log('new slider item has been shown');
-        }
-    };
-
-    if (document.getElementById('carousel-item-1')) {
-        const carousel = new Carousel(carouselElement, items, options);
-
-        carousel.cycle()
-
-        // set event listeners for prev and next buttons
-        const prevButton = document.getElementById('data-carousel-prev');
-        const nextButton = document.getElementById('data-carousel-next');
-        
-        const carouselButtons = document.getElementById('carousel-buttons');
-        console.log(carouselButtons);
-
-        prevButton.addEventListener('click', () => {
-            carousel.prev();
-        });
-
-        nextButton.addEventListener('click', () => {
-            carousel.next();
-        });
-    }
-})
 </script>
+
+<style scoped>
+.carousel-container {
+    height: 600px;
+    /* Adjust height as needed */
+}
+
+.carousel-item img {
+    height: 600px;
+    /* Ensure all images are the same height */
+}
+
+.carousel-inner {
+    display: flex;
+}
+
+.carousel-caption {
+    max-width: 50%;
+    /* Adjust as needed */
+}
+
+.carousel-prev,
+.carousel-next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-indicators span {
+    transition: background-color 0.3s ease;
+}
+
+/* Gradient overlay */
+.gradient-overlay {
+    background: linear-gradient(to top, rgba(21, 19, 19, 0.8), rgba(74, 0, 0, 0.1));
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    /* Ensures the overlay doesn't interfere with interactions */
+}
+</style>
