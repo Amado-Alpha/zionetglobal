@@ -16,7 +16,7 @@
 
                 <div class="flex items-center p-4 bg-white rounded-lg shadow-md">
                     <img src="https://zionetglobal.com/wp-content/uploads/2024/04/mpesa-new-300x300.png" alt="Bank B"
-                        class="w-16 h-16 rounded-full shadow-md">
+                        class="w-24 h-24 rounded-full shadow-md">
                     <div class="ml-4">
                         <h2 class="text-lg font-semibold text-gray-800">M Pesa</h2>
                         <p class="text-sm text-gray-600">LIPA Name: Zionet Global</p>
@@ -26,7 +26,7 @@
 
                 <div class="flex items-center p-4 bg-white rounded-lg shadow-md">
                     <img src="https://images.africanfinancials.com/tz-crdb-logo.png" alt="Bank C"
-                        class="w-16 h-16 rounded-full shadow-md">
+                        class="w-24 h-24 rounded-full shadow-md">
                     <div class="ml-4">
                         <h2 class="text-lg font-semibold text-gray-800">Bank C</h2>
                         <p class="text-sm text-gray-600">Account Name: Zionet</p>
