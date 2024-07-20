@@ -4,20 +4,28 @@ export const data = {
   navLinks: [
     { href: { path: "/" }, label: "Home" },
     { href: { path: "/About-us" }, label: "About Us" },
-    { href: { path: "/", hash: "#services" }, label: "Services" },
-    { href: { path: "/", hash: "#contact-us" }, label: "Contact Us" },
+    { href: { path: "/Services" }, label: "Services" },
+    { href: { path: "/ContactUs" }, label: "Contact Us" },
+    // { href: { path: "/ContactUs", hash: "#contact-us" }, label: "Contact Us" },
   ],
 
   footerLinks: [
     {
       title: "Services",
       links: [
-        { name: "Network installation", link: "/" },
-        { name: "IT Support", link: "/" },
-        { name: "Camera installation", link: "/" },
-        { name: "ICT shop", link: "/" },
-        { name: "Wi-Fi", link: "/" },
-        { name: "ISP", link: "/" },
+        { href: { path: "/", hash: "#landingservices" }, label: "TryServices" },
+        { href: { path: "/", hash: "#landingservices" }, label: "TryServices" },
+        { href: { path: "/", hash: "#landingservices" }, label: "TryServices" },
+        { href: { path: "/", hash: "#landingservices" }, label: "TryServices" },
+        { href: { path: "/", hash: "#landingservices" }, label: "TryServices" },
+        { href: { path: "/", hash: "#landingservices" }, label: "TryServices" },
+        { href: { path: "/", hash: "#landingservices" }, label: "TryServices" },
+        // { name: "Network installation", link: "/" },
+        // { name: "IT Support", link: "/" },
+        // { name: "Camera installation", link: "/" },
+        // { name: "ICT shop", link: "/" },
+        // { name: "Wi-Fi", link: "/" },
+        // { name: "ISP", link: "/" },
       ],
     },
     {

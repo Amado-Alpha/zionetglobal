@@ -6,7 +6,7 @@
     <Services />
   </section>
   <section>
-    <TeamMembers />
+    <OurTeam />
   </section>
   <section>
     <PaymentDetails />
@@ -21,6 +21,6 @@
 import Hero from '../sections/Hero.vue';
 import Services from '../sections/Services.vue';
 import PaymentDetails from '../sections/PaymentDetails.vue';
-import TeamMembers from '../sections/TeamMembers.vue';
+import OurTeam from './OurTeam.vue';
 import WhatsAppIcon from './WhatsAppIcon.vue';
 </script>

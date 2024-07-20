@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 bg-gray-100">
+  <section id="landingservices" class="py-16 bg-gray-100">
     <div class="container mx-auto px-6 text-center">
       <h2 class="text-4xl font-bold mb-12 text-gray-800">Our Services</h2>
       <div class="grid gap-10 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
@@ -11,39 +11,39 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue'
-import ServiceCard from '../components/ServiceCard.vue'
+import { reactive } from 'vue';
+import ServiceCard from '../components/ServiceCard.vue';
 
 const services = reactive([
   {
     id: 1,
-    icon: '🌐',
+    icon: 'fas fa-globe',
     title: 'Internet Service Provider',
     description: 'Providing high-speed internet with excellent customer support.',
   },
   {
     id: 2,
-    icon: '🖥️',
+    icon: 'fas fa-headset',
     title: 'IT Support',
     description: '24/7 IT support for all your technical needs and troubleshooting.',
   },
   {
     id: 3,
-    icon: '📶',
+    icon: 'fas fa-wifi',
     title: 'Wi-Fi Installation',
     description: 'Professional Wi-Fi installation for homes and businesses.',
   },
   {
     id: 4,
-    icon: '🛒',
+    icon: 'fas fa-store',
     title: 'ICT Shop',
     description: 'Your one-stop shop for all ICT products and accessories.',
   },
   {
     id: 5,
-    icon: '💻',
+    icon: 'fas fa-code',
     title: 'Software Development',
     description: 'Custom software development services to meet your business needs.',
   },
-])
+]);
 </script>

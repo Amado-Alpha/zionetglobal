@@ -1,8 +1,8 @@
 <template>
     <section class="py-10 bg-red-100 text-center">
         <div class="mb-8">
-            <h2 class="text-3xl text-gray-800 font-semibold sm:text-3xl md:text-4xl ">Meet Our Team </h2>
-            <h1 class="px-4 text-2xl sm:text-2xl md:text-3xl mx-auto">We work around the clock to deliver the best
+            <h2 class="text-3xl text-gray-800 font-semibold sm:text-3xl md:text-3xl ">Meet Our Team </h2>
+            <h1 class="px-4 text-2xl sm:text-2xl md:text-2xl mx-auto">We work around the clock to deliver the best
                 services to you.
             </h1>
         </div>

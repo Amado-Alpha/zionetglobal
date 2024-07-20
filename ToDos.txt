@@ -1,4 +1,25 @@
-From launched site
-1. Pay Links
-2. Call Now
-3. Fixed WhatsApp Link
+
+1. All social media icons should have links.
+2. All links should be active.
+3. Fix carousel image to be displayed as intended on smaller devices. (Done)
+4. 
+5. The carousel should move down from the navbar for a few pixels. (Done)
+6. The meet our team text is not displayed properly on smaller displays. (Done)
+7. The team carousel needs some fixing for tablets. (Done)
+8. Fix the our services section
+   (i) Include all the services.
+   (ii) Use proper icons.
+
+
+9. Design wise, think or research of a section you can add to the landing page to make it more appeal
+   ing and content. eg. An advertisement section, ....
+10. Fix about us page.
+11. For our services page, Include some nice text to explain in a bit detail about the services the c
+    ompany does just as shown on the services section on the landing page.
+   
+
+
+OPTIONS TO FIX THE CAROUSEL
+1. Reduce the image height on smaller devices. (Discarded)
+2. Resize the images and use srcset (Applied)
+3. 

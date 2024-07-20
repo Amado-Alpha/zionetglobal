@@ -1,10 +1,16 @@
 <template>
-    <section id="home" class="">
+    <section id="home" class="mt-16">
         <div class="carousel-container relative w-full overflow-hidden">
-            <div class="carousel-inner flex transition-transform duration-500 ease-in-out"
+            <div class="flex transition-transform duration-500 ease-in-out"
                 :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
-                <div v-for="(slide, index) in slides" :key="index" class="carousel-item flex-shrink-0 w-full relative">
-                    <img :src="slide.image" :alt="slide.alt" class="w-full h-[600px] object-cover">
+                <div v-for="(slide, index) in slides" :key="index"
+                    class="carousel-container flex-shrink-0 w-full relative">
+                    <img :src="slide.image" :alt="slide.alt"
+                        :srcset="`${slide.image} 640w, ${slide.imageMediumScreen} 768w, ${slide.imageLargeScreen} 1024w`"
+                        sizes="(max-width: 640px) 100vw,
+                                (max-width: 768px) 100vw,
+                                (max-width: 1024px) 100vw,
+                                100vw" class="w-full h-full object-cover">
                     <div class="gradient-overlay absolute inset-0"></div>
                     <div
                         class="carousel-caption absolute bottom-8 left-8 bg-black bg-opacity-50 text-white p-4 rounded-lg">
@@ -31,16 +37,45 @@
 </template>
 
 <script setup>
-import { banner } from "../assets/images";
-import { about } from "../assets/images";
+import { bannerBiggerScreen, bannerBiggerScreen1, banner } from "../assets/images";
+import { bannerMediumScreen } from "../assets/images";
 
 import { ref, onMounted, onUnmounted } from 'vue';
 
-// Recommended image size (1200x600)
+// Recommended image size for bigger screens (1200x600)
 const slides = [
-    { image: about, alt: 'Slide 1', title: 'Dedicated to serve you', description: 'Let us have your business infrastructure connected like never before!' },
-    { image: 'https://easywebdigital.com/sites/default/files/news/intelligent-wireless-2-large.jpg', alt: 'Slide 2', title: 'Microwave link installation', description: 'We install both single purpose and hybrid wireless links at an affordable price to enhance your business productivity' },
-    { image: 'https://tricon-services.com/sites/default/files/Point-to-Point-Links-Pic.jpg', alt: 'Slide 3', title: 'Reliable services', description: 'Continous support for our clients, we are just one call away.' },
+    {
+        image: bannerMediumScreen,
+        imageMediumScreen: bannerMediumScreen,
+        imageLargeScreen: bannerBiggerScreen1,
+        alt: 'Slide 1',
+        title: 'Dedicated to serve you',
+        description: 'Let us have your business infrastructure connected like never before!'
+    },
+    {
+        image: bannerMediumScreen,
+        imageMediumScreen: bannerMediumScreen,
+        imageLargeScreen: bannerBiggerScreen1,
+        alt: 'Slide 1',
+        title: 'Dedicated to serve you',
+        description: 'Let us have your business infrastructure connected like never before!'
+    },
+    {
+        image: 'https://easywebdigital.com/sites/default/files/news/intelligent-wireless-2-large.jpg',
+        imageMediumScreen: bannerMediumScreen,
+        imageLargeScreen: bannerBiggerScreen1,
+        alt: 'Slide 2',
+        title: 'Microwave link installation',
+        description: 'We install both single purpose and hybrid wireless links at an affordable price to enhance your business productivity'
+    },
+    {
+        image: 'https://tricon-services.com/sites/default/files/Point-to-Point-Links-Pic.jpg',
+        imageMediumScreen: bannerMediumScreen,
+        imageLargeScreen: bannerBiggerScreen1,
+        alt: 'Slide 3',
+        title: 'Reliable services',
+        description: 'Continous support for our clients, we are just one call away.'
+    },
 ];
 
 const currentSlide = ref(0);

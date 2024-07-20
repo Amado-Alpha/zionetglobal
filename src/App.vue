@@ -1,7 +1,7 @@
 <template>
 
   <main class="">
-    <section class="mb-14">
+    <section>
       <Nav />
     </section>
 

@@ -1,9 +1,14 @@
 <template>
   <!-- Header -->
-  <nav class="bg-white dark:bg-gray-900 fixed w-full z-40 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+  <nav
+    class="mb-24 bg-white dark:bg-gray-900 fixed w-full z-40 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <router-link to="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img :src="headerLogo" class="h-8" alt="Logo" />
+      <router-link to="/" class="flex items-center space-x-3 rtl:space-x-reverse relative">
+        <img :src="headerLogo" class="mt-4 h-8 relative z-10" alt="Logo" />
+        <div class="absolute -top-2 left-1/4 transform -translate-x-1/2 flex items-center justify-center">
+          <i class="fas fa-wifi text-red-600 text-2xl animate-pulse"></i>
+          <i class="fas fa-wifi absolute top-0 left-0 text-red-600 text-2xl opacity-0 animate-connecting delay-200"></i>
+        </div>
       </router-link>
       <div class="flex md:order-2">
         <button data-collapse-toggle="navbar-menu" type="button"
@@ -34,7 +39,7 @@
 <script setup>
 import { ref, onMounted, watch } from 'vue';
 import { data } from '../constants/index.js';
-import { headerLogo } from "../assets/images";
+import { headerLogo } from '../assets/images';  // Adjusted import for logo
 
 const navLinks = ref(data.navLinks);
 const isSidebarOpen = ref(false);
@@ -68,44 +73,21 @@ onMounted(() => {
 </script>
 
 <style scoped>
-nav {
-  transition: background-color 0.3s ease;
+@keyframes connecting {
+
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-nav:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-nav a {
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #1d4ed8;
-  /* Change this color to match your theme */
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-  min-width: 160px;
-  padding: 0.5rem 0;
-  margin: 0.125rem 0 0;
-  font-size: 1rem;
-  color: #212529;
-  text-align: left;
-  list-style: none;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
+.animate-connecting {
+  animation: connecting 1s infinite;
 }
 </style>
