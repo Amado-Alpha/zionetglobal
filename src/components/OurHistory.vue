@@ -25,11 +25,13 @@
 
 <script setup>
 
+import { bannerMediumScreen } from '../assets/images';
+
 const history = [
-    { year: '2020', title: 'Company Founded', description: 'Our company was founded with a vision to revolutionize the tech industry.', image: 'src/assets/images/about.jpg' },
-    { year: '2021', title: 'First Milestone', description: 'Reached 100 satisfied customers in just one year.', image: 'src/assets/images/about.jpg' },
-    { year: '2022', title: 'Expansion', description: 'Opened new offices in three additional cities.', image: 'src/assets/images/about.jpg' },
-    { year: '2023', title: 'Innovation Award', description: 'Received the Innovation Award for our cutting-edge solutions.', image: 'src/assets/images/about.jpg' },
+    { year: '2020', title: 'Company Founded', description: 'Our company was founded with a vision to revolutionize the tech industry.', image: bannerMediumScreen },
+    { year: '2021', title: 'First Milestone', description: 'Reached 100 satisfied customers in just one year.', image: bannerMediumScreen },
+    { year: '2022', title: 'Expansion', description: 'Opened new offices in three additional cities.', image: bannerMediumScreen },
+    { year: '2023', title: 'Innovation Award', description: 'Received the Innovation Award for our cutting-edge solutions.', image: bannerMediumScreen },
     // Add more historical events here
 ];
 

@@ -1,5 +1,6 @@
 <template>
-    <section class="hero bg-cover bg-center bg-red-600 text-white py-20 relative">
+    <section class="hero bg-cover bg-center text-white py-20 relative"
+        :style="{ backgroundImage: `url(${bannerMediumScreen})` }">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="container mx-auto text-center relative z-10">
             <h1 class="text-4xl md:text-6xl font-bold mb-4">About Us</h1>
@@ -9,8 +10,6 @@
     </section>
 </template>
 
-<style scoped>
-.hero {
-    background-image: url('src/assets/images/about.jpg');
-}
-</style>
+<script setup>
+import { bannerMediumScreen } from '../assets/images';
+</script>
