@@ -5,8 +5,8 @@
             <p class="text-lg md:text-xl mb-6">Contact us to learn more about our services and how we can help you
                 achieve your goals.</p>
             <button
-                class="bg-white text-red-800 font-semibold px-6 py-3 rounded-full shadow-md hover:bg-gray-200 transition-colors">
-                Contact Us
+                class="bg-white text-red-800 font-semibold px-6 py-3 rounded-full shadow-md hover:bg-gray-400 hover:text-white transition-colors">
+                <router-link :to="{ name: 'contacts' }"> Contact Us</router-link>
             </button>
         </div>
     </section>

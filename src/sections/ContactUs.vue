@@ -1,7 +1,7 @@
 <template>
+    <HeroSectionContactUs />
     <section class="contact bg-white py-20">
         <div class="container mx-auto px-4 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Contact Us</h2>
             <div class="flex flex-col lg:flex-row lg:space-x-12">
                 <!-- Contact Form -->
                 <div class="lg:w-1/2">
@@ -62,6 +62,8 @@
 
 <script setup>
 import { ref } from 'vue';
+import HeroSectionContactUs from '../components/HeroSectionContactUs.vue';
+
 
 const form = ref({
     name: '',

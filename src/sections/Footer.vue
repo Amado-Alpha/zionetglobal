@@ -32,7 +32,7 @@
           <ul class="space-y-2">
             <li class="flex items-center">
               <i class="fas fa-envelope text-black mr-3"></i>
-              <span>zionet@info.com</span>
+              <span>info@zionetglobal.com</span>
             </li>
             <li class="flex items-center">
               <i class="fas fa-phone-alt text-black mr-3"></i>
@@ -40,7 +40,8 @@
             </li>
             <li class="flex items-center">
               <i class="fas fa-map-marker-alt text-black mr-3"></i>
-              <span>Posta, Dar Es Salaam, Tanzania</span>
+              <span>Mibega Street, Kinyerezi, Dar es Salaam
+                Tanzania</span>
             </li>
           </ul>
         </div>
@@ -66,7 +67,7 @@
         </div>
       </div>
       <div class="text-center mt-10 border-t border-black pt-6">
-        <p class="text-black">© 2024 Company Name. All rights reserved.</p>
+        <p class="text-black">© 2024 Zionet. All rights reserved.</p>
       </div>
     </div>
   </footer>

@@ -37,7 +37,7 @@
 </template>
 
 <script setup>
-import { bannerBiggerScreen, bannerBiggerScreen1, banner } from "../assets/images";
+import { bannerBiggerScreen, bannerBiggerScreen1, banner, biggerScreenAdBanner, LinkInstallationLarge } from "../assets/images";
 import { bannerMediumScreen } from "../assets/images";
 
 import { ref, onMounted, onUnmounted } from 'vue';
@@ -47,7 +47,7 @@ const slides = [
     {
         image: bannerMediumScreen,
         imageMediumScreen: bannerMediumScreen,
-        imageLargeScreen: bannerBiggerScreen1,
+        imageLargeScreen: LinkInstallationLarge,
         alt: 'Slide 1',
         title: 'Dedicated to serve you',
         description: 'Let us have your business infrastructure connected like never before!'
@@ -55,7 +55,7 @@ const slides = [
     {
         image: bannerMediumScreen,
         imageMediumScreen: bannerMediumScreen,
-        imageLargeScreen: bannerBiggerScreen1,
+        imageLargeScreen: banner,
         alt: 'Slide 1',
         title: 'Dedicated to serve you',
         description: 'Let us have your business infrastructure connected like never before!'
@@ -63,18 +63,10 @@ const slides = [
     {
         image: 'https://easywebdigital.com/sites/default/files/news/intelligent-wireless-2-large.jpg',
         imageMediumScreen: bannerMediumScreen,
-        imageLargeScreen: bannerBiggerScreen1,
+        imageLargeScreen: LinkInstallationLarge,
         alt: 'Slide 2',
         title: 'Microwave link installation',
         description: 'We install both single purpose and hybrid wireless links at an affordable price to enhance your business productivity'
-    },
-    {
-        image: 'https://tricon-services.com/sites/default/files/Point-to-Point-Links-Pic.jpg',
-        imageMediumScreen: bannerMediumScreen,
-        imageLargeScreen: bannerBiggerScreen1,
-        alt: 'Slide 3',
-        title: 'Reliable services',
-        description: 'Continous support for our clients, we are just one call away.'
     },
 ];
 

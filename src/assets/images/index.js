@@ -11,6 +11,10 @@ import camera from "./security-camera.jpg";
 import networkInst from "./network-installation.jpg";
 import itSupport from "./it-support.jpg";
 import ictshop from "./ict-shop.jpg";
+import CRDBLogo from "./CRDBLogo.png";
+import MpesaLogo from "./MpesaLogo.png";
+import biggerScreenAdBanner from "./biggerScreenAdBanner.png";
+import LinkInstallationLarge from "./LinkInstallationLarge.jpg";
 
 export {
   footerLogo,
@@ -23,7 +27,11 @@ export {
   networkInst,
   itSupport,
   ictshop,
+  CRDBLogo,
+  MpesaLogo,
   bannerMediumScreen,
   bannerBiggerScreen,
   bannerBiggerScreen1,
+  biggerScreenAdBanner,
+  LinkInstallationLarge,
 };
