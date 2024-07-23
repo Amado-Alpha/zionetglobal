@@ -15,6 +15,8 @@ import CRDBLogo from "./CRDBLogo.png";
 import MpesaLogo from "./MpesaLogo.png";
 import biggerScreenAdBanner from "./biggerScreenAdBanner.png";
 import LinkInstallationLarge from "./LinkInstallationLarge.jpg";
+import ImageMedium from "./ImageMediumScreen.jpg";
+import Alphax from "./Alphax.jpg";
 
 export {
   footerLogo,
@@ -34,4 +36,6 @@ export {
   bannerBiggerScreen1,
   biggerScreenAdBanner,
   LinkInstallationLarge,
+  ImageMedium,
+  Alphax,
 };

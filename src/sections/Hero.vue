@@ -5,12 +5,13 @@
                 :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
                 <div v-for="(slide, index) in slides" :key="index"
                     class="carousel-container flex-shrink-0 w-full relative">
-                    <img :src="slide.image" :alt="slide.alt"
-                        :srcset="`${slide.image} 640w, ${slide.imageMediumScreen} 768w, ${slide.imageLargeScreen} 1024w`"
-                        sizes="(max-width: 640px) 100vw,
-                                (max-width: 768px) 100vw,
-                                (max-width: 1024px) 100vw,
-                                100vw" class="w-full h-full object-cover">
+                    <picture>
+                        <source media="(min-width: 1024px)" :srcset="slide.imageLargeScreen">
+                        <source media="(min-width: 768px)" :srcset="slide.imageMediumScreen">
+                        <source media="(min-width: 640px)" :srcset="slide.image">
+                        <img :src="slide.image" :alt="slide.alt" class="w-full h-full object-cover">
+                    </picture>
+
                     <div class="gradient-overlay absolute inset-0"></div>
                     <div
                         class="carousel-caption absolute bottom-8 left-8 bg-black bg-opacity-50 text-white p-4 rounded-lg">
@@ -37,7 +38,7 @@
 </template>
 
 <script setup>
-import { bannerBiggerScreen, bannerBiggerScreen1, banner, biggerScreenAdBanner, LinkInstallationLarge } from "../assets/images";
+import { bannerBiggerScreen, bannerBiggerScreen1, banner, biggerScreenAdBanner, LinkInstallationLarge, ImageMedium } from "../assets/images";
 import { bannerMediumScreen } from "../assets/images";
 
 import { ref, onMounted, onUnmounted } from 'vue';
@@ -53,16 +54,16 @@ const slides = [
         description: 'Let us have your business infrastructure connected like never before!'
     },
     {
-        image: bannerMediumScreen,
-        imageMediumScreen: bannerMediumScreen,
+        image: ImageMedium,
+        imageMediumScreen: ImageMedium,
         imageLargeScreen: banner,
         alt: 'Slide 1',
         title: 'Dedicated to serve you',
         description: 'Let us have your business infrastructure connected like never before!'
     },
     {
-        image: 'https://easywebdigital.com/sites/default/files/news/intelligent-wireless-2-large.jpg',
-        imageMediumScreen: bannerMediumScreen,
+        image: bannerBiggerScreen,
+        imageMediumScreen: ImageMedium,
         imageLargeScreen: LinkInstallationLarge,
         alt: 'Slide 2',
         title: 'Microwave link installation',
