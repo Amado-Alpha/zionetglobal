@@ -28,7 +28,7 @@
 import { reactive } from 'vue';
 import { Carousel, Slide, Pagination } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
-import { Alphax, bannerMediumScreen } from '../assets/images';
+import { Alphax, Elly, Joze, Sarah, bannerMediumScreen } from '../assets/images';
 
 
 const settings = reactive({
@@ -48,9 +48,9 @@ const breakpoints = reactive({
 })
 
 const teamMembers = reactive([
-    { id: 1, image: 'https://p7.hiclipart.com/preview/402/235/698/businessperson-computer-icons-avatar-passport.jpg', name: 'Eng.Elikana Nyaruhima', role: 'CEO' },
-    { id: 2, image: 'https://p7.hiclipart.com/preview/402/235/698/businessperson-computer-icons-avatar-passport.jpg', name: 'Sarah John', role: 'COO' },
-    { id: 3, image: 'https://p7.hiclipart.com/preview/402/235/698/businessperson-computer-icons-avatar-passport.jpg', name: 'Joseph Jumbe', role: 'Graphics designer' },
+    { id: 1, image: Elly, name: 'Eng.Elikana Nyaruhima', role: 'CEO' },
+    { id: 2, image: Sarah, name: 'Sarah John', role: 'COO' },
+    { id: 3, image: Joze, name: 'Joseph Jumbe', role: 'Graphics designer' },
     { id: 4, image: Alphax, name: 'Eng. Alphax Stanslaus', role: 'CTO' },
 ])
 </script>

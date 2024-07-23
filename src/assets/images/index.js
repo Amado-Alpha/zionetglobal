@@ -17,6 +17,9 @@ import biggerScreenAdBanner from "./biggerScreenAdBanner.png";
 import LinkInstallationLarge from "./LinkInstallationLarge.jpg";
 import ImageMedium from "./ImageMediumScreen.jpg";
 import Alphax from "./Alphax.jpg";
+import Sarah from "./Sarah.jpg";
+import Elly from "./Elly.jpg";
+import Joze from "./Joze.jpg";
 
 export {
   footerLogo,
@@ -37,5 +40,8 @@ export {
   biggerScreenAdBanner,
   LinkInstallationLarge,
   ImageMedium,
+  Joze,
   Alphax,
+  Elly,
+  Sarah,
 };
